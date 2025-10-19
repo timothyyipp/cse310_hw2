@@ -119,7 +119,6 @@ def main():
         sys.exit(1)
     flows = parse_pcap(sys.argv[1])
     sender_flows = detect_sender_flows(flows)
-    print(f"Detected {len(sender_flows)} sender-initiated TCP flows.")
     for f in sender_flows.values():
         analyze_flow(f)
 
